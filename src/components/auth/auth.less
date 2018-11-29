@@ -9,7 +9,7 @@
 .wrapper-opacity {
   background: rgba(220,220,220, 0.2);
   width: 400px;
-  height: 500px;
+  height: 450px;
   border-radius: 3px;
 }
 
@@ -19,9 +19,9 @@
   top: 10px;
   left: 10px;
   width: 380px;
-  height: 400px;
+  height: 350px;
   letter-spacing: 0.2rem;
-  border-bottom: 1px solid #9b9b9b;
+  border-bottom: 1px solid @dusty-gray;
 }
 
 .form-heading {
@@ -36,13 +36,17 @@
   background: none;
   outline: none;
   border: none;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid @gray;
   padding: 10px;
 }
 
-//input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-//  background: none;
-//}
+.input-auth-wrapper > input:hover {
+  border-bottom: 1px solid @lola;
+}
+
+.input-auth-wrapper > input:focus::placeholder {
+  color: transparent;
+}
 
 .input-auth-wrapper > span {
   display: inline-block;
@@ -55,54 +59,55 @@
 .btn-submit {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
+  padding: 15px 50px;
   border: none;
+  text-transform: uppercase;
   border-radius: 3px;
   color: @lola;
-  box-shadow: 0 0 2px 0 #111f2e;
-  background-image: linear-gradient(to top, #191c2a, #4f6d8b);
+  background-color: transparent;
+  background-image: linear-gradient(to top, @mirage, @kashmir-blue);
 }
 .btn-submit:hover {
   cursor: pointer;
-  background-image: linear-gradient(to top, #10121b, #6389ae);
+  background-image: linear-gradient(to top, @vulcan, @horizon);
 }
 
-  // Auth-social
+// Auth-google
 .auth-social-box {
   position: absolute;
-  bottom: 5px;
-  left: 70px;
+  bottom: 20px;
+  left: 100px;
   padding: 10px;
-  width: 260px;
+  width: 250px;
   display: flex;
   justify-content: space-between;
 }
 
+.auth-social-box > label:hover {
+  cursor: pointer;
+}
+
+.auth-social-box span {
+  display: inline-block;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  color: @big-stone
+}
+
 .auth-btn {
-  width: 50px;
-  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
   border: none;
   outline: none;
-  background-color: transparent;
-  background-image: url("../../components/../images/sprite.png");
-  background-repeat: no-repeat;
-  background-size: 420% 420%;
+  background: url("/images/google.png") no-repeat;
+  background-size: contain;
 }
 
 .auth-btn:hover {
-  transform: scale(1.05);
   cursor: pointer;
-  transition: transform 0.5s;
-}
-
-.auth-facebook {
-  background-position: -9px -10px;
-}
-
-.auth-google {
-  background-position: -80px -80px;
-}
-
-.auth-twitter {
-  background-position: -150px -80px;
+  transform: scale(1.1);
 }
