@@ -1,0 +1,29 @@
+@import "../../components/../styles/color";
+
+.main-content {
+  height: 200px;
+  margin: 10% 0 0;
+  text-align: center;
+}
+
+.main-content h1{
+  line-height: 200px;
+  color: @pickled-blue-wood;
+  font-size: 65px;
+  letter-spacing: 1.7rem;
+  text-shadow: 0 2px 0 @lola,
+  0 14px 10px rgba(0, 0, 0, 0.15),
+  0 30px 2px rgba(0, 0, 0, 0.1),
+  0 34px 30px rgba(0, 0, 0, 0.1);
+  animation: color linear 1s;
+}
+@keyframes color {
+  from {
+    color: transparent;
+    letter-spacing: 1.6rem;
+  }
+  to {
+    color: @pickled-blue-wood;
+    letter-spacing: 1.7rem;
+  }
+}
