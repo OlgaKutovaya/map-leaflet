@@ -3,8 +3,7 @@
 .about-author-wrapper {
   display: flex;
   width: 90%;
-  //min-height: 600px;
-  margin: 5% auto 0;
+  margin: 7% auto 0;
 }
 
 .block-info-wrapper {
@@ -19,11 +18,11 @@
   margin: 0 5px;
   padding: 5px 0 10px 0;
   border-radius: 7px;
-  box-shadow: inset 0 0 25px 0 #c6c6c6, 0 0 15px 0 #3f3f3f;
+  box-shadow: inset 0 0 25px 0 @silver, 0 0 15px 0 @mine-shaft;
 }
 
 .block-info:hover {
-  box-shadow: inset 0 0 30px 0 #d8d8d8, 0 0 20px 0 #1a1a1a;
+  box-shadow: inset 0 0 30px 0 @alto, 0 0 20px 0 @cod-gray;
   transition: 0.2s;
 }
 
@@ -32,7 +31,7 @@
   height: 160px;
   margin: 20px auto 30px;
   border-radius: 50%;
-  box-shadow: 0 0 25px 0 #1a1a1a;
+  box-shadow: 0 0 25px 0 @cod-gray;
 }
 
 .face-1 {
@@ -54,7 +53,7 @@
   margin: 0 20px;
   padding: 0 0 20px 0;
   text-align: justify;
-  color: #111f2e;
+  color: @big-stone;
 }
 
 @media screen and (max-width: 900px) {
@@ -64,7 +63,6 @@
 }
 
 @media screen and (max-width: 800px) {
-
   .block-info-wrapper {
     flex-direction: column;
   }
