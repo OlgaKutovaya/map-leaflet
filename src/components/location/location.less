@@ -1,11 +1,69 @@
-.map-wrapper {
-  margin: 5% auto;
+@import "../../components/../styles/color";
+
+.location-wrapper {
+  display: flex;
+  position: relative;
   width: 80%;
-  height: 500px;
-  //background: #ffffff;
+  height: 750px;
+  margin: 2% auto 0;
+}
+.wrapper-map-opacity {
+  background: rgba(220,220,220, 0.2);
+  width: 100%;
+  height: 750px;
+  border-radius: 3px;
+}
+
+.map-wrapper {
+  position: absolute;
+  bottom: 80px;
+  right: 15px;
+  width: 85%;
+  height: 650px;
 }
 
 .leaflet-container {
   width: 100%;
   height: 100%;
+  border-radius: 2px;
+  border: 4px solid #3c4e6e;
+  box-shadow: 0 0 15px #c3b5bf;
+}
+
+.leaflet-container:hover {
+  cursor: default;
+}
+// buttons
+
+.btn-map-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  width: 100%;
+  height: 40px;
+}
+
+.btn-map-wrapper > button {
+  padding: 10px;
+  color: @big-stone;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  background: rgba(220,220,220, 0.2);
+  box-shadow: 0 0 2px 0 @big-stone;
+}
+
+.btn-map-wrapper > button:hover {
+  background: rgba(220,220,220, 0.3);
+  cursor: pointer;
+}
+.leaflet-container {
+  position: relative;
+}
+
+.find-location {
+  position: absolute;
+  z-index: 1000;
+  bottom: 25px;
+  right: 40px;
 }

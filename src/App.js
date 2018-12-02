@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import {connect} from 'react-redux';
 import Wrapper from "./components/wrapper/Wrapper";
 import {BrowserRouter, Route} from 'react-router-dom'
@@ -9,11 +8,12 @@ import Location from "./components/location/Location";
 import Main from "./components/Main/Main";
 import {auth} from './firebase';
 import {submitSimpleRegistration} from "./actionCreators/submitAuth";
+import axios from 'axios';
+import {getPlaces} from './actionCreators/placesMarks';
 
 class App extends Component {
 
     componentDidMount() {
-        // универсальный обработчик firbase для всех типов авторизации
         auth.onAuthStateChanged((user) => {
             if (user) {
                 this.props.submitSimpleRegistration(user);
@@ -33,11 +33,10 @@ class App extends Component {
                         <Route exact path='/about' component={About}/>
                         <Route exact path='/location' component={Location}/>
                     </Wrapper>
-
                 </div>
             </BrowserRouter>
         );
     }
 }
 
-export default connect(null, {submitSimpleRegistration})(App);
+export default connect(null, {submitSimpleRegistration, getPlaces})(App);

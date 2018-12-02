@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {auth, googleAuthProvider, facebookAuthProvider, twitterAuthProvider} from '../../firebase';
+import {auth, googleAuthProvider} from '../../firebase';
+import './auth.less';
 
 class Auth extends Component {
-    state = {
-        name: '',
-        phone: '',
-        email: '',
-        password: ''
-    };
+
+    initialState = {name: '', phone: '', email: '', password: ''};
+    state = this.initialState;
 
     handleChange = (event) => {
         const newState = {...this.state};
@@ -22,17 +20,22 @@ class Auth extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        const { email, password} = this.state;
-        // отправляем на сервер ассинхр.действие и эта часть ждет ответа от сервера
-        // ф-я создает юзера в firebase
+        const {email, password, name} = this.state;
         auth.createUserWithEmailAndPassword(email, password)
-        // then - когда успешный отв.от сервера
-            .then(response => {
-                alert('Successfully registered!');
+            .then(user => {
+                user.updateProfile({
+                    displayName: name
+                }).then(function () {
+                    alert('Successfully registered');
+                    this.setState(this.initialState);
+                }).catch(function (error) {
+                    alert('Error while adding displayName');
+                });
+                console.log(user);
             })
-            .catch(function(error) {
-                console.log(error);
-        });
+            .catch(function (error) {
+                alert('Please enter correct data');
+            });
     };
 
     render() {
@@ -40,7 +43,7 @@ class Auth extends Component {
             <div className='auth-wrapper'>
                 <div className="wrapper-opacity"/>
                 <form noValidate
-                    onSubmit={(event) => this.submitHandler(event)}
+                      onSubmit={(event) => this.submitHandler(event)}
                       className='form-enter-wrapper'>
                     <h2 className='form-heading'>Authorization</h2>
                     <label className='input-auth-wrapper'>
@@ -48,6 +51,7 @@ class Auth extends Component {
                         <input type="text"
                                name="name"
                                value={this.state.name}
+                               placeholder='Name'
                                onChange={(event) => {
                                    this.handleChange(event);
                                }}
@@ -59,6 +63,7 @@ class Auth extends Component {
                             type="email"
                             name="email"
                             value={this.state.email}
+                            placeholder='example@gmail.com'
                             onChange={(event) => {
                                 this.handleChange(event);
                             }}
@@ -70,6 +75,7 @@ class Auth extends Component {
                             type="password"
                             name="password"
                             value={this.state.password}
+                            placeholder='at least 6 characters'
                             onChange={(event) => {
                                 this.handleChange(event);
                             }}
@@ -84,15 +90,12 @@ class Auth extends Component {
                     />
                 </form>
                 <div className='auth-social-box'>
-                    <button className='auth-btn auth-google'
-                            onClick={() => auth.signInWithPopup(googleAuthProvider)}>
-                    </button>
-                    <button className='auth-btn auth-facebook'
-                            onClick={() => auth.signInWithPopup(facebookAuthProvider)}>
-                    </button>
-                    <button className='auth-btn auth-twitter'
-                            onClick={() => auth.signInWithPopup(twitterAuthProvider)}>
-                    </button>
+                    <label>
+                        <span>sign in with google</span>
+                        <button className='auth-btn'
+                                onClick={() => auth.signInWithPopup(googleAuthProvider)}>
+                        </button>
+                    </label>
                 </div>
             </div>
         );

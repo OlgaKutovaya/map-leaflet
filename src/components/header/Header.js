@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import UserCard from "./UserCard";
+import './header.less';
 
 class Header extends Component {
     render() {
@@ -15,11 +16,11 @@ class Header extends Component {
                     <Link className='nav-link' to='/about'>About</Link>
                     <Link className='nav-link' to='/location'>Location</Link>
                     {this.props.userData.user ? <UserCard user={this.props.userData.user}/>
-                        : <Link className='nav-link' to='/auth'>Authorization</Link> }
+                        : <Link className='nav-link' to='/auth'>Authorization</Link>}
                 </nav>
             </header>
         );
     }
 }
 
-export default connect(state => {return {userData: state.userData}}) (Header);
+export default connect(state => {return {userData: state.userData}})(Header);

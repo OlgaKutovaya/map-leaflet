@@ -2,7 +2,9 @@
 
 .auth-wrapper {
   position: relative;
-  margin: 5% 38%;
+  display: block;
+  width: 400px;
+  margin: 5% auto;
   color: @big-stone;
 }
 
@@ -69,7 +71,7 @@
 }
 .btn-submit:hover {
   cursor: pointer;
-  background-image: linear-gradient(to top, @vulcan, @horizon);
+  background-image: linear-gradient(to top, @vulcan, @fiord);
 }
 
 // Auth-google
@@ -98,7 +100,7 @@
 .auth-btn {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 10px;
+  margin-left: 15px;
   width: 30px;
   height: 30px;
   border: none;
@@ -109,5 +111,7 @@
 
 .auth-btn:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  border-radius: 50%;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffffff;
 }

@@ -1,6 +1,5 @@
 import {SUBMIT_SIMPLE_REGISTRATION} from '../reducers/types';
 
-
 const initialState = {
     user: null
 };

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './main-content.less';
 
 class Main extends Component {
     render() {
