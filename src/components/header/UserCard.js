@@ -20,7 +20,9 @@ class UserCard extends Component {
                 no-repeat center center`, backgroundSize: `60px 60px`
                 }}/>
                 <div className='user-inner-wrapper'>
-                    <p>{(this.props.user && !this.props.user.displayName) ? 'Guest' : this.props.user.displayName}</p>
+                    <p>{(this.props.user && !this.props.user.displayName)
+                        ? 'GUEST' : this.props.user.displayName}
+                    </p>
                     <button className='btn-sign-out'
                             onClick={(event) => {
                                 this.handleSignOut(event);
