@@ -1,12 +1,7 @@
 import {
-    SAVE_PHARMACIES_PLACES,
-    SAVE_TIRE_FITTING_PLACES,
-    SAVE_SCHOOLS_PLACES,
-    SAVE_RESTAURANTS_PLACES,
-    CHANGE_MY_LOCATION
-} from '../reducers/types';
+    SAVE_PHARMACIES_PLACES, SAVE_TIRE_FITTING_PLACES, SAVE_SCHOOLS_PLACES,
+    SAVE_RESTAURANTS_PLACES, CHANGE_MY_LOCATION} from '../reducers/types';
 import axios from 'axios';
-
 
 export const getPlaces = (place) => {
     return (dispatch, getState) => {
@@ -45,5 +40,3 @@ export const findMyLocation = (lat, lng) => {
         payload: [lat, lng]
     }
 };
-
-

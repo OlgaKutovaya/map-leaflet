@@ -40,5 +40,4 @@ class AsideLocation extends Component {
     }
 }
 
-
 export default connect(null, {getPlaces})(AsideLocation);

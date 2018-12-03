@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Wrapper from "./components/wrapper/Wrapper";
 import {BrowserRouter, Route} from 'react-router-dom'
+import Wrapper from "./components/wrapper/Wrapper";
 import Auth from "./components/auth/Auth";
 import About from "./components/about/About";
 import Location from "./components/location/Location";
 import Main from "./components/Main/Main";
-import {auth} from './firebase';
 import {submitSimpleRegistration} from "./actionCreators/submitAuth";
-import axios from 'axios';
 import {getPlaces} from './actionCreators/placesMarks';
+import {auth} from './firebase';
 
 class App extends Component {
 

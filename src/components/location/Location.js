@@ -131,9 +131,7 @@ class Location extends Component {
                                             A pretty CSS3 popup. <br/> Easily customizable.
                                         </Popup>
                                     </Marker>
-                                )
-                            }
-                        )
+                                )})
                         }
                         {this.renderPlacesMarkers()}
                         <button className='find-location'

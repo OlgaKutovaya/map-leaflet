@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {auth} from '../../firebase';
 
-
 class UserCard extends Component {
 
     handleSignOut = (event) => {

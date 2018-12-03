@@ -70,20 +70,3 @@ export const hideMarkersFromMap = () => {
         payload: null
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
