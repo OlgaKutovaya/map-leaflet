@@ -1,82 +1,95 @@
 @import "../../components/../styles/color";
 
-.aside-location-wrapper {
-    position: absolute;
-    width: 15%;
-    height: 100%;
-}
+@pharmacy-icon: "/images/pharmacy.png";
+@tire_fitting-icon: "/images/fitting.jpg";
+@school-icon: "/images/school.png";
+@restaurant-icon: "/images/restaurant.png";
 
-.icon-wrapper {
+.aside-location-wrapper {
+  position: absolute;
+  width: 15%;
+  height: 100%;
+
+  .icon-wrapper {
     margin: 50px auto 0;
     width: 150px;
     min-height: 60px;
-}
 
-.icon-wrapper p {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 20px;
-    color: @big-stone;
-}
+    .icon-img {
+      margin: 5px auto 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
 
-.icon-img {
-    margin: 5px auto 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
+    .icon-img:hover {
+      transform: scale(1.07);
+      cursor: pointer;
+      transition: 0.4s;
+    }
 
-.icon-img:hover {
-    transform: scale(1.07);
-    cursor: pointer;
-    transition: 0.4s;
+    p {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 20px;
+      color: @big-stone;
+    }
+  }
 }
 
 .icon-pharmacies {
-    background: url("/images/pharmacy.png") no-repeat;
-    background-size: contain;
+  background: url(@pharmacy-icon) no-repeat;
+  background-size: contain;
 }
 
-.icon-gas-st {
-    background: url("/images/fitting.jpg") no-repeat center;
-    background-size: 145% 145%;
+.icon-tire-fitting {
+  background: url(@tire_fitting-icon) no-repeat center;
+  background-size: 145% 145%;
 }
 
 .icon-schools {
-    background: url("/images/school.png") no-repeat;
-    background-size: contain;
+  background: url(@school-icon) no-repeat;
+  background-size: contain;
 }
 
 .icon-restaurants {
-    background: url("/images/restaurant.png") no-repeat;
-    background-size: contain;
+  background: url(@restaurant-icon) no-repeat;
+  background-size: contain;
 }
 
 
 @media screen and (max-width: 950px) {
-    .icon-img {
+  .aside-location-wrapper {
+    .icon-wrapper {
+      .icon-img {
         width: 50px;
         height: 50px;
+      }
     }
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .aside-location-wrapper {
-        display: flex;
-        width: 100%;
-        top: -20px;
-    }
+  .aside-location-wrapper {
+    display: flex;
+    width: 100%;
+    top: -20px;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .icon-img {
+  .aside-location-wrapper {
+    .icon-wrapper {
+      p {
+        font-size: 15px;
+      }
+
+      .icon-img {
         width: 40px;
         height: 40px;
+      }
     }
-
-    .icon-wrapper p {
-        font-size: 15px;
-    }
+  }
 }
 
 

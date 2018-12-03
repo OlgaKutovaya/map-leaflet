@@ -15,7 +15,8 @@ class Header extends Component {
                 <nav className='nav-wrapper'>
                     <Link className='nav-link' to='/about'>About</Link>
                     <Link className='nav-link' to='/location'>Location</Link>
-                    {this.props.userData.user ? <UserCard user={this.props.userData.user}/>
+                    {this.props.userData.user
+                        ? <UserCard user={this.props.userData.user}/>
                         : <Link className='nav-link' to='/auth'>Authorization</Link>}
                 </nav>
             </header>

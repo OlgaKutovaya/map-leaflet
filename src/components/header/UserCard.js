@@ -7,17 +7,17 @@ class UserCard extends Component {
     handleSignOut = (event) => {
         auth.signOut()
             .then(response => alert('Successful Sign out'))
-            .catch(error => console.log('Error while sign out!'));
+            .catch(error => console.log('Error while sign out'));
     };
 
     render() {
         console.log(this.props.user);
         return (
             <div className='user-info'>
-                <div className="user-img" style={{
-                    background: `url(${(this.props.user && !this.props.user.photoURL)
+                <div className="user-img"
+                     style={{background: `url(${(this.props.user && !this.props.user.photoURL)
                         ? '/images/user.png' : this.props.user.photoURL})
-                no-repeat center center`, backgroundSize: `60px 60px`
+                        no-repeat center center`, backgroundSize: `60px 60px`
                 }}/>
                 <div className='user-inner-wrapper'>
                     <p>{(this.props.user && !this.props.user.displayName)

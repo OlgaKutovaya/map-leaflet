@@ -5,8 +5,8 @@ import size from 'lodash/size';
 import {connect} from 'react-redux';
 import ZoomControl from "react-leaflet/es/ZoomControl";
 import AsideLocation from "./AsideLocation";
-import {saveMarkersToFirebase, addNewMarker,
-    getMarkersFromFirebase, deleteMarkersFromFirebase, hideMarkersFromMap} from '../../actionCreators/markersFirebase';
+import {saveMarkersToFirebase, addNewMarker, getMarkersFromFirebase,
+    deleteMarkersFromFirebase, hideMarkersFromMap} from '../../actionCreators/markersFirebase';
 import {findMyLocation} from '../../actionCreators/placesMarks';
 import L from "leaflet";
 import './location.less';
@@ -28,7 +28,6 @@ class Location extends Component {
                     content: 'My popup'
                 }
         };
-
         this.props.addNewMarker(newMarkers);
     };
 
@@ -36,7 +35,7 @@ class Location extends Component {
         let markersArr = [];
         for (let i in this.props.placesMarkers) {
 
-           const customMarker = L.icon({
+            const customMarker = L.icon({
                 iconUrl: "/images/" + i + ".png",
                 iconSize: [30, 47],
                 iconAnchor: [24, 48],
@@ -62,7 +61,6 @@ class Location extends Component {
             });
             markersArr = [...markersArr, ...markersTempArr];
         }
-
         return markersArr;
     };
 
@@ -83,17 +81,17 @@ class Location extends Component {
     };
 
     handleFindLocation = (event) => {
-        this.mapNode.leafletElement.locate({ setView: true }) /* This will return map so you can do chaining */
+        this.mapNode.leafletElement.locate({setView: true})
             .on("locationfound", (e) => {
-                    let marker = L.marker([e.latitude, e.longitude]).bindPopup("Your are here :)");
-                    let circle = L.circle([e.latitude, e.longitude], e.accuracy / 2, {
-                        weight: 1,
-                        color: "#136AEC",
-                        fillColor: "#136AEC",
-                        fillOpacity: 0.15
-                    });
-                    this.mapNode.leafletElement.addLayer(marker);
-                    this.mapNode.leafletElement.addLayer(circle);
+                let marker = L.marker([e.latitude, e.longitude]).bindPopup("Your are here :)");
+                let circle = L.circle([e.latitude, e.longitude], e.accuracy / 2, {
+                    weight: 1,
+                    color: "#136AEC",
+                    fillColor: "#136AEC",
+                    fillOpacity: 0.15
+                });
+                this.mapNode.leafletElement.addLayer(marker);
+                this.mapNode.leafletElement.addLayer(circle);
                 this.props.findMyLocation(e.latitude, e.longitude);
 
             })
@@ -123,7 +121,7 @@ class Location extends Component {
                         />
                         <Marker position={position}>
                             <Popup>
-                                A pretty CSS3 popup. <br/> Easily customizable.
+                               location
                             </Popup>
                         </Marker>
                         {map(this.props.location.markers, (item, key) => {
@@ -147,7 +145,7 @@ class Location extends Component {
                         <ZoomControl position={"bottomright"}/>
                     </Map>
                     <div className='btn-map-wrapper'>
-                        <button onClick={(event)=> {
+                        <button onClick={(event) => {
                             this.handleSaveBtnClick(event);
                         }}>
                             save all markers

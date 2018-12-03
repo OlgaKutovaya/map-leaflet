@@ -1,4 +1,4 @@
-import {SAVE_PHARMACIES_PLACES, SAVE_GAS_STATIONS_PLACES,
+import {SAVE_PHARMACIES_PLACES, SAVE_TIRE_FITTING_PLACES,
     SAVE_SCHOOLS_PLACES, SAVE_RESTAURANTS_PLACES} from '../reducers/types';
 
 const initialState = {
@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
                 ...initialState,
                 pharmacies: action.payload
             };
-        case SAVE_GAS_STATIONS_PLACES:
+        case SAVE_TIRE_FITTING_PLACES:
             return {
                 ...initialState,
                 tireFitting: action.payload

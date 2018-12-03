@@ -3,7 +3,7 @@ import {SAVE_NEW_MARKER, GET_ALL_MARKERS, DELETE_ALL_MARKERS, CHANGE_MY_LOCATION
 const initialState = {
     lat: 46.47293450032126,
     lng: 30.74108183383942,
-    zoom: 15,
+    zoom: 14,
     markers: {}
 };
 

@@ -12,6 +12,7 @@ class Auth extends Component {
         const newState = {...this.state};
         const fieldName = event.target.name;
         const fieldValue = event.target.value;
+
         newState[fieldName] = fieldValue;
         this.setState({...newState}, () => {
             console.log(this.state);
@@ -20,8 +21,10 @@ class Auth extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
+
         const {email, password, name} = this.state;
         auth.createUserWithEmailAndPassword(email, password)
+
             .then(user => {
                 user.updateProfile({
                     displayName: name
@@ -31,7 +34,6 @@ class Auth extends Component {
                 }).catch(function (error) {
                     alert('Error while adding displayName');
                 });
-                console.log(user);
             })
             .catch(function (error) {
                 alert('Please enter correct data');
@@ -42,9 +44,8 @@ class Auth extends Component {
         return (
             <div className='auth-wrapper'>
                 <div className="wrapper-opacity"/>
-                <form noValidate
-                      onSubmit={(event) => this.submitHandler(event)}
-                      className='form-enter-wrapper'>
+                <form className='form-enter-wrapper' noValidate
+                      onSubmit={(event) => this.submitHandler(event)}>
                     <h2 className='form-heading'>Authorization</h2>
                     <label className='input-auth-wrapper'>
                         <span>Name:</span>

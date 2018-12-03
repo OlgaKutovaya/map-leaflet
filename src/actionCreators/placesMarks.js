@@ -1,6 +1,6 @@
 import {
     SAVE_PHARMACIES_PLACES,
-    SAVE_GAS_STATIONS_PLACES,
+    SAVE_TIRE_FITTING_PLACES,
     SAVE_SCHOOLS_PLACES,
     SAVE_RESTAURANTS_PLACES,
     CHANGE_MY_LOCATION
@@ -24,7 +24,7 @@ export const getPlaces = (place) => {
                         dispatch({type: SAVE_PHARMACIES_PLACES, payload: placesData});
                     } else if (place === 'шиномонтаж') {
                         console.log(response.data);
-                        dispatch({type: SAVE_GAS_STATIONS_PLACES, payload: placesData});
+                        dispatch({type: SAVE_TIRE_FITTING_PLACES, payload: placesData});
                     } else if (place === 'школа') {
                         dispatch({type: SAVE_SCHOOLS_PLACES, payload: placesData});
                     } else if (place === 'ресторан') {

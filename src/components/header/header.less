@@ -1,130 +1,138 @@
 @import "../../components/../styles/color";
 
+@logo: "/images/logobird.png";
+
 .header {
   display: flex;
   justify-content: space-between;
-}
 
-.logo-wrapper {
-  display: flex;
-  width: 170px;
-  margin-left: 50px;
-  border-bottom: 1px solid @shuttle-gray;
-  text-decoration: none;
-}
+  .logo-wrapper {
+    display: flex;
+    width: 170px;
+    margin-left: 50px;
+    border-bottom: 1px solid @shuttle-gray;
+    text-decoration: none;
 
-.logo-wrapper:hover {
-  border-bottom: 1px solid @gull-gray;
-}
+    .logo-img {
+      width: 70px;
+      height: 70px;
+      margin-right: 10px;
+      background: url(@logo);
+      background-size: cover;
+    }
 
-.logo-img {
-  width: 70px;
-  height: 70px;
-  margin-right: 10px;
-  background: url("/images/logobird.png");
-  background-size: cover;
-}
+    .logo-name {
+      line-height: 70px;
+      font-size: 30px;
+      font-style: italic;
+      color: @firefly;
+    }
+  }
 
-.logo-name {
-  line-height: 70px;
-  font-size: 30px;
-  font-style: italic;
-  color: @firefly;
-}
+  .logo-wrapper:hover {
+    border-bottom: 1px solid @gull-gray;
+  }
 
-.nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 50px;
-  width: 500px;
-}
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+    width: 500px;
 
-.nav-link {
-  text-decoration: none;
-  padding: 35px 20px 10px;
-  color: @big-stone;
-  font-size: 18px;
-  font-weight: bolder;
-  text-shadow: 1px 1px 0 @pink-swan;
-  border-bottom: 1px solid @gull-gray;
-}
+    .nav-link {
+      text-decoration: none;
+      padding: 35px 20px 10px;
+      color: @big-stone;
+      font-size: 18px;
+      font-weight: bolder;
+      text-shadow: 1px 1px 0 @pink-swan;
+      border-bottom: 1px solid @gull-gray;
+    }
 
-.nav-link:hover {
-  border-bottom: 1px solid @mischka;
+    .nav-link:hover {
+      border-bottom: 1px solid @mischka;
+    }
+  }
 }
 
 // user card
-
 .user-info {
   display: flex;
-}
 
-.user-img {
-  vertical-align: middle;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
+  .user-img {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
 
-.user-inner-wrapper {
-  margin-top: -10px;
-}
+  .user-inner-wrapper {
+    margin-top: -10px;
 
-.user-info p {
-  color: @big-stone;
-  font-weight: bold;
-  margin-left: 15px;
-  display: inline-block;
-}
+    p {
+      color: @big-stone;
+      font-weight: bold;
+      margin-left: 15px;
+      display: inline-block;
+    }
 
+    .btn-sign-out {
+      display: block;
+      margin: -5px 25px;
+      padding: 5px 20px;
+      border: none;
+      border-radius: 3px;
+      color: @lola;
+      box-shadow: 0 0 2px 0 #111f2e;
+      background-image: linear-gradient(to top, @mirage, @kashmir-blue);
+    }
 
-.btn-sign-out {
-  display: block;
-  margin: -5px 25px;
-  padding: 5px 20px;
-  border: none;
-  border-radius: 3px;
-  color: @lola;
-  box-shadow: 0 0 2px 0 #111f2e;
-  background-image: linear-gradient(to top, @mirage, @kashmir-blue);
-}
-
-.btn-sign-out:hover {
-  cursor: pointer;
-  background-image: linear-gradient(to top, @vulcan, @horizon);
+    .btn-sign-out:hover {
+      cursor: pointer;
+      background-image: linear-gradient(to top, @vulcan, @horizon);
+    }
+  }
 }
 
 @media screen and (max-width: 625px) {
   .header {
     flex-direction: column;
     align-items: center;
+
+    .logo-wrapper {
+      margin: 0;
+    }
+
+    .nav-wrapper {
+      margin: 0;
+      width: 300px;
+
+      .nav-link {
+        padding: 35px 5px 10px;
+        color: @big-stone;
+        font-size: 15px;
+      }
+    }
   }
-  .logo-wrapper {
-    margin: 0;
-  }
-  .nav-wrapper {
-    margin: 0;
-    width: 300px;
-  }
-  .nav-link {
-    padding: 35px 5px 10px;
-    color: @big-stone;
-    font-size: 15px;
-  }
+
   .user-info {
     display: block;
     margin-top: 10px;
-  }
-  .user-info p {
-    color: @big-stone;
-    font-weight: bold;
-    margin-left: 15px;
-    display: block;
-  }
-  .user-img {
-    margin: 0 auto;
-    width: 55px;
-    height: 55px;
+
+    .user-img {
+      margin: 0 auto;
+      width: 55px;
+      height: 55px;
+    }
+
+    .user-inner-wrapper {
+      p {
+        color: @big-stone;
+        font-weight: bold;
+        margin-left: 15px;
+        display: block;
+      }
+    }
   }
 }

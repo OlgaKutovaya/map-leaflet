@@ -18,10 +18,9 @@ class AsideLocation extends Component {
                      onClick={(event) => {
                          this.props.getPlaces('шиномонтаж');
                      }}>
-                    <div className="icon-img icon-gas-st"/>
+                    <div className="icon-img icon-tire-fitting"/>
                     <p>tire fitting</p>
                 </div>
-
                 <div className="icon-wrapper"
                      onClick={(event) => {
                          this.props.getPlaces('школа');
